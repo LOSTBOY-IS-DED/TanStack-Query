@@ -1,8 +1,9 @@
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import OldWay from "./components/OldWay";
 import Tanstack from "./components/Tanstack";
 import Navbar from "./components/Navbar";
+
 
 function App() {
   return (
