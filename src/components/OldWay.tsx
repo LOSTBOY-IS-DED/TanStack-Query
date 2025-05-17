@@ -21,7 +21,7 @@ const OldWay = () => {
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
         
-      const response = await axios.get("http://localhost:4000/posts");
+      const response = await axios.get("https://tanstack-query.onrender.com/posts");
       setData(response.data);
     } catch (error) {
       if (error instanceof Error) {
