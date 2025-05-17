@@ -20,7 +20,7 @@ const Tanstack = () => {
    const {data , isLoading , isError , error} = useQuery({
     queryKey: ['posts'],
     queryFn : async () => {
-        return axios.get("https://tanstack-query.onrender.com/posts")
+        return axios.get("http://localhost:4000/posts")
     }
    }) 
 

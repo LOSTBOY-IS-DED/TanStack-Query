@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaSpinner } from 'react-icons/fa';
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 interface OldWayData {
@@ -19,9 +21,9 @@ const OldWay = () => {
     setError(null);
     try {
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
         
-      const response = await axios.get("https://tanstack-query.onrender.com/posts");
+      const response = await axios.get("http://localhost:4000/posts");
       setData(response.data);
     } catch (error) {
       if (error instanceof Error) {
