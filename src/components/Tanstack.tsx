@@ -17,13 +17,16 @@ const Tanstack = () => {
     // use can store the data give by the useQuery in a variable
     // it has the data , isLoading, isError, error
 
-   const {data , isLoading , isError , error} = useQuery({
+   const {data , isLoading , isError , error , isFetching} = useQuery({
     queryKey: ['posts'],
     queryFn : async () => {
         return axios.get("http://localhost:4000/posts")
-    }
-   }) 
+    }, 
+    staleTime : 30000, //seconds
+    // staleTime is a time period in which the data is not considered stale and is fresh
+    }) 
 
+   console.log({isLoading , isFetching});
 
 
      if (isLoading) {
@@ -44,7 +47,7 @@ const Tanstack = () => {
 
   return (
      <section className="max-w-5xl mx-auto py-24 text-white">
-        <h1 className="text-2xl font-bold mb-6">Fetched Posts (Old Way)</h1>
+        <h1 className="text-2xl font-bold mb-6">Fetched Posts (New Way)</h1>
         <div className="space-y-4">
           {data?.data.map((post : PostType) => (
             <div key={post.id} className="bg-gray-800 p-4 rounded-2xl">
